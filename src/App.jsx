@@ -10,36 +10,29 @@ export default function App() {
 
       {/* Navigation Bar */}
       <header className="navbar">
-        <div className="nav-container">
-          <a href="#" className="nav-logo">
-            <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              {/* App Icon Background */}
-              <rect width="100" height="100" rx="24" fill="url(#qala-gradient)" />
-
-              {/* Audio Waveform Bars */}
-              <rect x="22" y="38" width="8" height="24" rx="4" fill="white" />
-              <rect x="38" y="26" width="8" height="48" rx="4" fill="white" />
-              <rect x="54" y="15" width="8" height="70" rx="4" fill="white" />
-              <rect x="70" y="32" width="8" height="36" rx="4" fill="white" />
-
-              {/* Gradient Definition */}
-              <defs>
-                <linearGradient id="qala-gradient" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#3b82f6" />
-                  <stop offset="1" stopColor="#4f46e5" />
-                </linearGradient>
-              </defs>
-            </svg>
-            <span>Qala</span>
+        <a href="#" className="nav-logo">
+          <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="100" height="100" rx="24" fill="url(#qala-gradient)" />
+            <rect x="22" y="38" width="8" height="24" rx="4" fill="white" />
+            <rect x="38" y="26" width="8" height="48" rx="4" fill="white" />
+            <rect x="54" y="15" width="8" height="70" rx="4" fill="white" />
+            <rect x="70" y="32" width="8" height="36" rx="4" fill="white" />
+            <defs>
+              <linearGradient id="qala-gradient" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#3b82f6" />
+                <stop offset="1" stopColor="#4f46e5" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <span>Qala</span>
+        </a>
+        <nav className="nav-links">
+          <a href="#domain-model" className="nav-item">Classical</a>
+          <a href="#general-model" className="nav-item">General Arabic</a>
+          <a href="mailto:shukredev@gmail.com" className="nav-btn">
+            Contact
           </a>
-          <nav className="nav-links">
-            <a href="#domain-model">Domain-Adapted Model</a>
-            <a href="#general-model">General Model</a>
-            <a href="mailto:shukredev@gmail.com" className="nav-btn">
-              Contact
-            </a>
-          </nav>
-        </div>
+        </nav>
       </header>
 
       {/* Main Content */}
@@ -47,26 +40,33 @@ export default function App() {
 
         {/* Hero Section */}
         <section className="hero-section">
+          <div className="badge">
+            <div className="badge-pulse"></div>
+            Active Research
+          </div>
           <h1 className="hero-title">
-            Arabic Speech Recognition
+            The Next Generation of<br />Arabic Speech Recognition.
           </h1>
           <p className="hero-subtitle">
-            A real-time streaming Fast Conformer-Hybrid ASR architecture. Starting from a shared foundational model, this project features two divergent fine-tunes: a highly constrained domain-adapted model optimized for classical recitation (<strong>2.9% WER</strong>), and a broader model trained for general unconstrained Arabic (<strong>21.71% WER</strong>).
+            A real-time streaming Fast Conformer-Hybrid ASR architecture. Starting from a shared foundational model, this project features two divergent fine-tunes: a highly constrained domain-adapted model optimized for classical recitation (<strong>2.9% WER</strong>), and a broader model trained for general Arabic (<strong>21.71% WER</strong>).
           </p>
         </section>
+
+        {/* Elegant Vertical Divider */}
+        <div className="section-divider"></div>
 
         {/* ------------------------------------------- */}
         {/* MODEL 1: DOMAIN-ADAPTED (CLASSICAL)         */}
         {/* ------------------------------------------- */}
-        <section id="domain-model" style={{ width: '100%', scrollMarginTop: '6rem', marginBottom: '6rem' }}>
-          <h2 style={{ fontSize: '2rem', fontWeight: 700, color: 'white', marginBottom: '1rem' }}>
-            Branch 1: Classical Recitation Domain
+        <section id="domain-model" style={{ width: '100%', scrollMarginTop: '8rem' }}>
+          <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: 'white', marginBottom: '1rem', letterSpacing: '-0.025em' }}>
+            Branch 1: Classical Recitation
           </h2>
-          <p style={{ color: '#a3a3a3', marginBottom: '2.5rem', maxWidth: '42rem', marginLeft: 'auto', marginRight: 'auto' }}>
-            Specialized fine-tuning optimized for complex classical recitation. Trained on over 1,264 hours of constrained acoustic data.
+          <p style={{ color: '#a3a3a3', marginBottom: '3rem', maxWidth: '42rem', marginLeft: 'auto', marginRight: 'auto', fontSize: '1.125rem' }}>
+            Specialized fine-tuning optimized for complex classical recitation. Trained on over 1,264 hours of data.
           </p>
 
-          <div className="video-container" style={{ marginBottom: '2.5rem' }}>
+          <div className="video-container">
             <iframe
               src="https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID_2"
               title="Domain-Adapted ASR Demo"
@@ -86,66 +86,46 @@ export default function App() {
             </div>
           </div>
 
-          {/* Domain Model Logs Toggle */}
-          <div style={{ marginTop: '2rem', width: '100%' }}>
+          <div style={{ marginTop: '3rem', width: '100%' }}>
             <button
               onClick={() => setShowQuranLogs(!showQuranLogs)}
-              style={{
-                backgroundColor: '#171717',
-                color: '#a3a3a3',
-                border: '1px solid #262626',
-                padding: '0.75rem 1.5rem',
-                borderRadius: '0.5rem',
-                cursor: 'pointer',
-                fontSize: '0.875rem',
-                fontWeight: 500,
-                transition: 'all 0.2s ease',
-                width: '100%',
-                maxWidth: '42rem'
-              }}
-              onMouseOver={(e) => e.target.style.color = '#ffffff'}
-              onMouseOut={(e) => e.target.style.color = '#a3a3a3'}
+              className="logs-toggle-btn"
             >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+              </svg>
               {showQuranLogs ? 'Hide TensorBoard Logs' : 'View TensorBoard Logs'}
             </button>
 
-            {/* Domain Model Logs Stack */}
             {showQuranLogs && (
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '1.5rem',
-                marginTop: '1.5rem',
-                maxWidth: '42rem',
-                marginLeft: 'auto',
-                marginRight: 'auto'
-              }}>
-                <img src="/converged_classical/train_loss.png" alt="Domain Train Loss" style={{ width: '100%', borderRadius: '0.5rem', border: '1px solid #262626' }} />
-                <img src="/converged_classical/train_rnnt_loss.png" alt="Domain Train RNN-T Loss" style={{ width: '100%', borderRadius: '0.5rem', border: '1px solid #262626' }} />
-                <img src="/converged_classical/train_ctc_loss.png" alt="Domain Train CTC Loss" style={{ width: '100%', borderRadius: '0.5rem', border: '1px solid #262626' }} />
-                <img src="/converged_classical/val_wer.png" alt="Domain Validation WER" style={{ width: '100%', borderRadius: '0.5rem', border: '1px solid #262626' }} />
-                <img src="/converged_classical/val_wer_ctc.png" alt="Domain Validation WER CTC" style={{ width: '100%', borderRadius: '0.5rem', border: '1px solid #262626' }} />
-                <img src="/converged_classical/learning_rate.png" alt="Domain Learning Rate" style={{ width: '100%', borderRadius: '0.5rem', border: '1px solid #262626' }} />
+              <div className="logs-grid">
+                <img src="/converged_classical/train_loss.png" alt="Domain Train Loss" />
+                <img src="/converged_classical/train_rnnt_loss.png" alt="Domain Train RNN-T Loss" />
+                <img src="/converged_classical/train_ctc_loss.png" alt="Domain Train CTC Loss" />
+                <img src="/converged_classical/val_wer.png" alt="Domain Validation WER" />
+                <img src="/converged_classical/val_wer_ctc.png" alt="Domain Validation WER CTC" />
+                <img src="/converged_classical/learning_rate.png" alt="Domain Learning Rate" />
               </div>
             )}
           </div>
         </section>
 
-        {/* Divider */}
-        <hr style={{ width: '100%', borderColor: '#262626', marginBottom: '6rem' }} />
+        {/* Elegant Vertical Divider */}
+        <div className="section-divider"></div>
 
         {/* ------------------------------------------- */}
         {/* MODEL 2: GENERAL ARABIC                     */}
         {/* ------------------------------------------- */}
-        <section id="general-model" style={{ width: '100%', scrollMarginTop: '6rem', marginBottom: '6rem' }}>
-          <h2 style={{ fontSize: '2rem', fontWeight: 700, color: 'white', marginBottom: '1rem' }}>
+        <section id="general-model" style={{ width: '100%', scrollMarginTop: '8rem' }}>
+          <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: 'white', marginBottom: '1rem', letterSpacing: '-0.025em' }}>
             Branch 2: General Acoustic Domain
           </h2>
-          <p style={{ color: '#a3a3a3', marginBottom: '2.5rem', maxWidth: '42rem', marginLeft: 'auto', marginRight: 'auto' }}>
-            Trained on a curated 572-hour corpus for unconstrained speech transcription.
+          <p style={{ color: '#a3a3a3', marginBottom: '3rem', maxWidth: '42rem', marginLeft: 'auto', marginRight: 'auto', fontSize: '1.125rem' }}>
+            Trained on a curated 572-hour corpus for general arabic speech transcription.
           </p>
 
-          <div className="video-container" style={{ marginBottom: '2.5rem' }}>
+          <div className="video-container">
             <iframe
               src="https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID_1"
               title="General Arabic ASR Demo"
@@ -160,52 +140,32 @@ export default function App() {
               <p className="metric-value">6.91%</p>
             </div>
             <div className="metric-card">
-              <h3 className="metric-label">Word Error Rate (WER)</h3>
+              <h3 className="metric-label">Word Error (WER)</h3>
               <p className="metric-value">21.71%</p>
             </div>
           </div>
 
-          {/* General Model Logs Toggle */}
-          <div style={{ marginTop: '2rem', width: '100%' }}>
+          <div style={{ marginTop: '3rem', width: '100%' }}>
             <button
               onClick={() => setShowGeneralLogs(!showGeneralLogs)}
-              style={{
-                backgroundColor: '#171717',
-                color: '#a3a3a3',
-                border: '1px solid #262626',
-                padding: '0.75rem 1.5rem',
-                borderRadius: '0.5rem',
-                cursor: 'pointer',
-                fontSize: '0.875rem',
-                fontWeight: 500,
-                transition: 'all 0.2s ease',
-                width: '100%',
-                maxWidth: '42rem'
-              }}
-              onMouseOver={(e) => e.target.style.color = '#ffffff'}
-              onMouseOut={(e) => e.target.style.color = '#a3a3a3'}
+              className="logs-toggle-btn"
             >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+              </svg>
               {showGeneralLogs ? 'Hide TensorBoard Logs' : 'View TensorBoard Logs'}
             </button>
 
-            {/* General Model Logs Stack */}
             {showGeneralLogs && (
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '1.5rem',
-                marginTop: '1.5rem',
-                maxWidth: '42rem',
-                marginLeft: 'auto',
-                marginRight: 'auto'
-              }}>
-                <img src="/converged_general_arabic/train_loss.png" alt="General Train Loss" style={{ width: '100%', borderRadius: '0.5rem', border: '1px solid #262626' }} />
-                <img src="/converged_general_arabic/train_rnnt_loss.png" alt="General Train RNN-T Loss" style={{ width: '100%', borderRadius: '0.5rem', border: '1px solid #262626' }} />
-                <img src="/converged_general_arabic/train_ctc_loss.png" alt="General Train CTC Loss" style={{ width: '100%', borderRadius: '0.5rem', border: '1px solid #262626' }} />
-                <img src="/converged_general_arabic/val_wer.png" alt="General Validation WER" style={{ width: '100%', borderRadius: '0.5rem', border: '1px solid #262626' }} />
-                <img src="/converged_general_arabic/val_wer_ctc.png" alt="General Validation WER CTC" style={{ width: '100%', borderRadius: '0.5rem', border: '1px solid #262626' }} />
-                <img src="/converged_general_arabic/learning_rate.png" alt="General Learning Rate" style={{ width: '100%', borderRadius: '0.5rem', border: '1px solid #262626' }} />
-                <img src="/converged_general_arabic/nemo_test.png" alt="NeMo Evaluation Output" style={{ width: '100%', borderRadius: '0.5rem', border: '1px solid #262626' }} />
+              <div className="logs-grid">
+                <img src="/converged_general_arabic/train_loss.png" alt="General Train Loss" />
+                <img src="/converged_general_arabic/train_rnnt_loss.png" alt="General Train RNN-T Loss" />
+                <img src="/converged_general_arabic/train_ctc_loss.png" alt="General Train CTC Loss" />
+                <img src="/converged_general_arabic/val_wer.png" alt="General Validation WER" />
+                <img src="/converged_general_arabic/val_wer_ctc.png" alt="General Validation WER CTC" />
+                <img src="/converged_general_arabic/learning_rate.png" alt="General Learning Rate" />
+                <img src="/converged_general_arabic/nemo_test.png" alt="NeMo Evaluation Output" />
               </div>
             )}
           </div>
@@ -216,10 +176,7 @@ export default function App() {
       {/* Footer */}
       <footer className="footer">
         <div className="footer-container">
-          <p>&copy; {new Date().getFullYear()} Qala Project. All rights reserved.</p>
-          <div className="footer-links">
-            <a href="#">Contact Developer</a>
-          </div>
+          <p>&copy; {new Date().getFullYear()} Qala Research. All rights reserved.</p>
         </div>
       </footer>
 
