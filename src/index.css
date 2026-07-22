@@ -13,10 +13,11 @@ body {
   margin: 0;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+  background-color: #000000 !important;
   background-image:
     radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 50% 100%, rgba(79, 70, 229, 0.1) 0%, transparent 50%);
-  background-attachment: fixed;
+    radial-gradient(circle at 50% 100%, rgba(79, 70, 229, 0.1) 0%, transparent 50%) !important;
+  background-attachment: fixed !important;
 }
 
 ::selection {
@@ -76,7 +77,6 @@ body {
   font-weight: 500;
   transition: color 0.2s;
   display: none;
-  /* Hide on very small screens */
 }
 
 @media (min-width: 640px) {
@@ -90,7 +90,7 @@ body {
 }
 
 .nav-btn {
-  background: linear-gradient(135deg, #3b82f6 0%, #4f46e5 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #4f46e5 100%) !important;
   color: white !important;
   padding: 0.6rem 1.25rem;
   border-radius: 9999px;
@@ -112,7 +112,6 @@ body {
   max-width: 72rem;
   margin: 0 auto;
   padding: 10rem 1.5rem 6rem 1.5rem;
-  /* Extra top padding for floating nav */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -142,9 +141,9 @@ section {
   gap: 0.5rem;
   padding: 0.25rem 1rem;
   border-radius: 9999px;
-  border: 1px solid rgba(59, 130, 246, 0.3);
-  background-color: rgba(59, 130, 246, 0.1);
-  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+  background-color: rgba(59, 130, 246, 0.1) !important;
+  color: #60a5fa !important;
   font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
@@ -185,14 +184,13 @@ section {
   margin-top: 0;
   margin-bottom: 1.5rem;
   line-height: 1.1;
-  /* Add explicit fallback color */
-  color: #ffffff;
-  /* Use background-image instead of background */
-  background-image: linear-gradient(to right, #ffffff, #a3a3a3);
-  /* Ensure cross-browser clipping */
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+
+  display: inline-block;
+  color: transparent !important;
+  background: linear-gradient(to right, #ffffff, #a3a3a3) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
 
 @media (min-width: 768px) {
@@ -208,9 +206,7 @@ section {
   line-height: 1.75;
   margin: 0 auto;
   text-align: justify !important;
-  /* Forces perfect block alignment */
   text-indent: 2.5rem;
-  /* Keeps your clean tab indent */
 }
 
 /* --- VIDEO SECTION --- */
@@ -305,14 +301,14 @@ section {
 .metric-value {
   font-size: 3rem;
   font-weight: 700;
-  background: linear-gradient(to right, #60a5fa, #818cf8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: linear-gradient(to right, #60a5fa, #818cf8) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
   margin: 0;
   letter-spacing: -0.025em;
 }
 
-/* --- LOGS TOGGLE BUTTON --- */
 /* --- LOGS TOGGLE BUTTON --- */
 .logs-toggle-btn {
   background-color: #0a0a0a;
@@ -322,14 +318,11 @@ section {
   border-radius: 0.75rem;
   cursor: pointer;
   font-size: 0.875rem;
-  /* Fixed from camelCase */
   font-weight: 600;
-  /* Fixed from camelCase */
   transition: all 0.2s ease;
   width: 100%;
   max-width: 42rem;
   margin: 0 auto;
-  /* <-- THIS IS THE FIX (Centers the button) */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -346,7 +339,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  marginTop: 2rem;
+  margin-top: 2rem;
   width: 100%;
   max-width: 42rem;
   margin-left: auto;
@@ -385,33 +378,7 @@ section {
   margin: 0 auto;
   padding: 0 1.5rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-@media (min-width: 640px) {
-  .footer-container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
-/* --- FOOTER --- */
-.footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  background-color: #000000;
-  padding: 3rem 0;
-  margin-top: auto;
-}
-
-.footer-container {
-  max-width: 64rem;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-  display: flex;
   justify-content: center;
-  /* This forces the text to the exact center */
   align-items: center;
 }
 

@@ -19,8 +19,8 @@ export default function App() {
             <rect x="70" y="32" width="8" height="36" rx="4" fill="white" />
             <defs>
               <linearGradient id="qala-gradient" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#3b82f6" />
-                <stop offset="1" stop-color="#4f46e5" />
+                <stop stopColor="#3b82f6" />
+                <stop offset="1" stopColor="#4f46e5" />
               </linearGradient>
             </defs>
           </svg>
@@ -72,7 +72,6 @@ export default function App() {
               playsInline
               style={{ width: '100%', height: '100%', outline: 'none', objectFit: 'cover' }}
             >
-              {/* Uses .mp4 if available, otherwise falls back to your .mov file */}
               <source src="/quran_test.mp4" type="video/mp4" />
               <source src="/quran_test.mov" type="video/quicktime" />
               Your browser does not support the video tag.
@@ -135,7 +134,6 @@ export default function App() {
               playsInline
               style={{ width: '100%', height: '100%', outline: 'none', objectFit: 'cover' }}
             >
-              {/* Uses .mp4 if available, otherwise falls back to your .mov file */}
               <source src="/general_arabic_model_test.mp4" type="video/mp4" />
               <source src="/general_arabic_model_test.mov" type="video/quicktime" />
               Your browser does not support the video tag.
