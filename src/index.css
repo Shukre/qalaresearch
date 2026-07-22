@@ -185,12 +185,11 @@ section {
   margin-bottom: 1.5rem;
   line-height: 1.1;
 
-  display: inline-block;
-  color: transparent !important;
-  background: linear-gradient(to right, #ffffff, #a3a3a3) !important;
-  background-clip: text !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
+  /* Use solid white with a subtle glow instead of a gradient */
+  color: #ffffff !important;
+  background: none !important;
+  -webkit-text-fill-color: #ffffff !important;
+  text-shadow: 0 4px 24px rgba(255, 255, 255, 0.25);
 }
 
 @media (min-width: 768px) {
@@ -360,8 +359,9 @@ section {
 /* --- DIVIDER --- */
 .section-divider {
   width: 1px;
-  height: 100px;
-  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.2), transparent);
+  height: 80px;
+  /* Use a solid opacity instead of a gradient so it doesn't turn invisible */
+  background-color: rgba(255, 255, 255, 0.15) !important;
   margin: 2rem auto;
 }
 
