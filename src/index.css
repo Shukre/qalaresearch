@@ -185,7 +185,12 @@ section {
   margin-top: 0;
   margin-bottom: 1.5rem;
   line-height: 1.1;
-  background: linear-gradient(to right, #ffffff, #a3a3a3);
+  /* Add explicit fallback color */
+  color: #ffffff;
+  /* Use background-image instead of background */
+  background-image: linear-gradient(to right, #ffffff, #a3a3a3);
+  /* Ensure cross-browser clipping */
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -364,7 +369,7 @@ section {
   width: 1px;
   height: 100px;
   background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.2), transparent);
-  margin: 4rem auto;
+  margin: 2rem auto;
 }
 
 /* --- FOOTER --- */

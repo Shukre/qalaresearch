@@ -19,8 +19,8 @@ export default function App() {
             <rect x="70" y="32" width="8" height="36" rx="4" fill="white" />
             <defs>
               <linearGradient id="qala-gradient" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#3b82f6" />
-                <stop offset="1" stopColor="#4f46e5" />
+                <stop stop-color="#3b82f6" />
+                <stop offset="1" stop-color="#4f46e5" />
               </linearGradient>
             </defs>
           </svg>
