@@ -67,12 +67,16 @@ export default function App() {
           </p>
 
           <div className="video-container">
-            <iframe
-              src="https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID_2"
-              title="Domain-Adapted ASR Demo"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen>
-            </iframe>
+            <video
+              controls
+              playsInline
+              style={{ width: '100%', height: '100%', outline: 'none', objectFit: 'cover' }}
+            >
+              {/* Uses .mp4 if available, otherwise falls back to your .mov file */}
+              <source src="/quran_test.mp4" type="video/mp4" />
+              <source src="/quran_test.mov" type="video/quicktime" />
+              Your browser does not support the video tag.
+            </video>
           </div>
 
           <div className="metrics-grid">
@@ -126,12 +130,16 @@ export default function App() {
           </p>
 
           <div className="video-container">
-            <iframe
-              src="https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID_1"
-              title="General Arabic ASR Demo"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen>
-            </iframe>
+            <video
+              controls
+              playsInline
+              style={{ width: '100%', height: '100%', outline: 'none', objectFit: 'cover' }}
+            >
+              {/* Uses .mp4 if available, otherwise falls back to your .mov file */}
+              <source src="/general_arabic_model_test.mp4" type="video/mp4" />
+              <source src="/general_arabic_model_test.mov" type="video/quicktime" />
+              Your browser does not support the video tag.
+            </video>
           </div>
 
           <div className="metrics-grid">
